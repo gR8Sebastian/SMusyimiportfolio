@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastian Musyimi - Web Development Process</title>
+    <title>Projects - Sebastian Musyimi</title>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230096FF'/><text x='50' y='65' font-size='50' text-anchor='middle' fill='%23121212' font-family='Arial, sans-serif' font-weight='bold'>SM</text></svg>">
     
@@ -17,19 +17,21 @@
     
     <style>
         :root {
-            --accent: #0096FF;
-            --accent-dark: #0077cc;
+            --accent: #0096FF;       /* blue */
+            --accent-dark: #0096FF;
             --accent-light: #137ec51a;
             --accent-gradient: linear-gradient(135deg, #0096FF 0%, #0096FF 100%);
+
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 20px;
             --radius-full: 50px;
+            
             --transition-fast: all 0.2s ease-in-out;
             --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
-        /* Dark Theme */
+        /* Dark Theme  */
         body {
             --bg-primary: #1A1D24;
             --bg-secondary: #232730;
@@ -265,142 +267,44 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
+            height: 300px;
+            perspective: 1000px;
         }
 
-        /* METHODOLOGY SECTION */
-        .methodology-section {
-            margin: 4rem auto 0;
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .methodology-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .methodology-header h2 {
-            font-size: 2.5rem;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
+        .floating-cube {
             position: relative;
-            display: inline-block;
+            width: 150px;
+            height: 150px;
+            transform-style: preserve-3d;
+            animation: rotateCube 15s infinite linear;
         }
 
-        .methodology-header h2::after {
-            content: '';
+        .cube-face {
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-            border-radius: 2px;
-        }
-
-        .methodology-header p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 20px auto 0;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .methodology-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .process-step {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem 1.8rem;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            border-top: 4px solid var(--accent);
-            text-align: center;
-        }
-
-        .process-step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background: var(--accent-light);
+            border: 2px solid var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 2rem;
-            transition: var(--transition-smooth);
-        }
-
-        .process-step:hover .step-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 10px 20px rgba(0, 150, 255, 0.3);
-        }
-
-        .step-number {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-weight: 700;
+            font-size: 2.5rem;
             color: var(--accent);
-            font-size: 1rem;
-            background: var(--accent-light);
-            padding: 0.3rem 0.8rem;
-            border-radius: var(--radius-full);
+            opacity: 0.8;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(25, 121, 177, 0.651);
         }
 
-        .step-title {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
+        .face-front { transform: translateZ(75px); }
+        .face-back { transform: rotateY(180deg) translateZ(75px); }
+        .face-right { transform: rotateY(90deg) translateZ(75px); }
+        .face-left { transform: rotateY(-90deg) translateZ(75px); }
+        .face-top { transform: rotateX(90deg) translateZ(75px); }
+        .face-bottom { transform: rotateX(-90deg) translateZ(75px); }
 
-        .step-content {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .step-tools {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .tool-tag {
-            background: var(--accent-light);
-            color: var(--accent);
-            padding: 0.4rem 0.9rem;
-            border-radius: var(--radius-full);
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: var(--transition-fast);
-        }
-
-        .tool-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(25, 121, 177, 0.651);
+        @keyframes rotateCube {
+            0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
         }
 
         .intro-text h1 {
@@ -472,6 +376,30 @@
             box-shadow: 0 12px 24px var(--text-primary);
         }
 
+        /* LIGHTING EFFECT */
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                800px circle at var(--mouse-x) var(--mouse-y),
+                rgba(25, 121, 177, 0.651),
+                transparent 40%
+            );
+            border-radius: var(--radius-lg);
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 0;
+        }
+
         .project-image {
             height: 200px;
             position: relative;
@@ -522,6 +450,10 @@
         }
         .project-card h3 a:hover {
             color: var(--accent);
+        }
+        .project-card:hover .project-image,
+        .project-card:hover .project-tags span,
+        .project-card:hover .project-links .btn {
         }
         
         .project-description {
@@ -574,6 +506,16 @@
         .project-links .btn:hover {
             transform: translateY(-3px);
             color: var(--text-primary);
+        }
+        
+        .project-links .btn-secondary {
+            background: transparent;
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        
+        .project-links .btn-secondary:hover {
+            background: var(--accent-light);
         }
 
         /* Footer */
@@ -688,10 +630,6 @@
             .intro-text p {
                 margin: 0 auto 1.5rem;
             }
-            
-            .methodology-steps {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -728,91 +666,16 @@
                         <p>
                             My approach to web projects is rooted in a clear methodology: first, I meticulously design engaging and intuitive web experiences, ensuring every detail serves its purpose. Then, I skillfully develop these concepts into robust, high-performing websites. My ultimate aim is to empower my clients to truly dominate their online presence, making sure their digital footprint translates into tangible results and stronger connections.
                         </p>
-                        
-                        <!-- Methodology Section Starts Here -->
-                        <div class="methodology-section">
-                            <div class="methodology-header">
-                                <h2>My Process</h2>
-                                <p>Each project follows a structured workflow to ensure quality, efficiency, and client satisfaction</p>
-                            </div>
-                            
-                            <div class="methodology-steps">
-                                <div class="process-step">
-                                    <div class="step-number">Step 1</div>
-                                    <div class="step-icon">
-                                        <i class="fas fa-pencil-ruler"></i>
-                                    </div>
-                                    <h3 class="step-title">Design & Plan</h3>
-                                    <p class="step-content">
-                                        Creating wireframes, mockups, and prototypes to visualize the final product. We focus on user experience and interface design principles.
-                                    </p>
-                                    <div class="step-tools">
-                                        <span class="tool-tag">Figma</span>
-                                        <span class="tool-tag">Adobe XD</span>
-                                        <span class="tool-tag">User Research</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="process-step">
-                                    <div class="step-number">Step 2</div>
-                                    <div class="step-icon">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <h3 class="step-title">Development</h3>
-                                    <p class="step-content">
-                                        Building responsive, accessible websites with clean, maintainable code. Implementing functionality with modern frameworks and best practices.
-                                    </p>
-                                    <div class="step-tools">
-                                        <span class="tool-tag">HTML/CSS</span>
-                                        <span class="tool-tag">JavaScript</span>
-                                        <span class="tool-tag">React</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="process-step">
-                                    <div class="step-number">Step 3</div>
-                                    <div class="step-icon">
-                                        <i class="fas fa-vial"></i>
-                                    </div>
-                                    <h3 class="step-title">Testing & Refinement</h3>
-                                    <p class="step-content">
-                                        Rigorous testing across devices and browsers. Performance optimization, accessibility checks, and security hardening.
-                                    </p>
-                                    <div class="step-tools">
-                                        <span class="tool-tag">Jest</span>
-                                        <span class="tool-tag">Lighthouse</span>
-                                        <span class="tool-tag">Cross-Browser</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="process-step">
-                                    <div class="step-number">Step 4</div>
-                                    <div class="step-icon">
-                                        <i class="fas fa-rocket"></i>
-                                    </div>
-                                    <h3 class="step-title">Deployment & Optimization</h3>
-                                    <p class="step-content">
-                                        Launching the website with continuous monitoring and analytics. Ongoing optimization based on real user data and feedback.
-                                    </p>
-                                    <div class="step-tools">
-                                        <span class="tool-tag">Netlify</span>
-                                        <span class="tool-tag">Google Analytics</span>
-                                        <span class="tool-tag">SEO</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Methodology Section Ends Here -->
                     </div>
                     
                     <div class="intro-visual">
-                        <!-- Visual placeholder for design balance -->
-                        <div style="text-align: center; padding: 20px;">
-                            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-                                <div style="font-size: 5rem; color: var(--accent); opacity: 0.1;">
-                                    <i class="fas fa-sitemap"></i>
-                                </div>
-                            </div>
+                        <div class="floating-cube">
+                            <div class="cube-face face-front"><i class="fas fa-code"></i></div>
+                            <div class="cube-face face-back"><i class="fas fa-paint-brush"></i></div>
+                            <div class="cube-face face-right"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="cube-face face-left"><i class="fas fa-server"></i></div>
+                            <div class="cube-face face-top"><i class="fas fa-database"></i></div>
+                            <div class="cube-face face-bottom"><i class="fas fa-rocket"></i></div>
                         </div>
                     </div>
                 </div>
@@ -1039,6 +902,22 @@
             // Initial check
             handleScrollAnimation();
             window.addEventListener('scroll', handleScrollAnimation);
+
+            // --- Lighting Effect for Project Cards ---
+            const handleLightingEffect = (e) => {
+                const projectCards = document.querySelectorAll('.project-card');
+                
+                projectCards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            };
+            
+            projectsGrid.addEventListener('mousemove', handleLightingEffect);
         });
     </script>
 </body>
