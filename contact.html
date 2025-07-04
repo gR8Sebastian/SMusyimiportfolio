@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -397,6 +398,26 @@
             border-top: 1px solid var(--border-color);
             font-size: 0.9rem;
         }
+       .cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.2s, height 0.2s, background 0.2s;
+        }
+        .cursor-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.288);
+        }
+        .cursor-button {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+        }
 
         /* Responsiveness designnnnnn */
         @media (max-width: 768px) {
@@ -514,7 +535,7 @@
                 <h4>Contact Info</h4>
                 <ul class="footer-links">
                     <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
-                    <li><i class="fas fa-envelope"></i> mutindasmusyimi@gmail.com</li>
+                    <li><i class="fas fa-envelope"></i> mutindasmusyimi@gmail.com.com</li>
                     <li><i class="fas fa-phone"></i> +254 705 976 736</li>
                 </ul>
             </div>
@@ -524,7 +545,7 @@
             <p>&copy; 2025 Sebastian Musyimi.</p>
         </div>
     </footer>
-
+    <div class="cursor"></div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const mobileToggle = document.getElementById('mobileToggle');
@@ -533,7 +554,6 @@
             const body = document.body;
             const themeIcon = themeToggle.querySelector('i');
 
-            // --- Mobile Navigation ---
             mobileToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 const isOpen = navMenu.classList.contains('active');
@@ -550,8 +570,6 @@
                     }
                 });
             });
-
-            // --- Theme Toggle ---
             const applyTheme = (theme) => {
                 if (theme === 'light') {
                     body.classList.add('light-theme');
@@ -571,12 +589,9 @@
                 applyTheme(newTheme);
             });
 
-            // Load saved theme from localStorage
-            const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark
+            const savedTheme = localStorage.getItem('theme') || 'dark'; 
             applyTheme(savedTheme);
 
-
-            // --- Scroll Animations ---
             const scrollElements = document.querySelectorAll('.animate-on-scroll');
             
             const elementInView = (el, dividend = 1) => {
@@ -602,10 +617,23 @@
                 });
             }
             
-            // Initial check
+            
+
             handleScrollAnimation();
             window.addEventListener('scroll', handleScrollAnimation);
         });
+        if ('ontouchstart' in window) cursor.style.display = 'none';
+        
+                const cursor = document.querySelector('.cursor');
+                document.addEventListener('mousemove', (e) => {
+                    cursor.style.left = `${e.pageX - 10}px`;
+                    cursor.style.top = `${e.pageY - 10}px`;
+                });
+                document.querySelectorAll('a, .btn').forEach(el => {
+                    el.addEventListener('mouseenter', () => cursor.classList.add(el.tagName === 'A' ? 'cursor-link' : 'cursor-button'));
+                    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-link', 'cursor-button'));
+                });
     </script>
 </body>
 </html>
+
