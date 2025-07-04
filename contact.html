@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Sebastian Musyimi</title>
+    <title>Projects - Sebastian Musyimi</title>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230096FF'/><text x='50' y='65' font-size='50' text-anchor='middle' fill='%23121212' font-family='Arial, sans-serif' font-weight='bold'>SM</text></svg>">
     
@@ -11,67 +11,68 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root {
-            --accent: #0096FF;       /* blue */
-            --accent-dark: #0096FF;
+    :root {
+        --accent: #0096FF;       /* blue */
+        --accent-dark: #0096FF;
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --radius-full: 50px;
+        --transition-fast: all 0.2s ease-in-out;
+        --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-full: 50px;
-            
-            --transition-fast: all 0.2s ease-in-out;
-            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            
-            /* Animation colors for dark mode */
-            --radial-color-1: rgba(0, 150, 255, 0.25);
-            --radial-color-2: rgba(0, 150, 255, 0.15);
-            --radial-color-3: rgba(0, 150, 255, 0.1);
-            --radial-color-4: rgba(0, 0, 0, 0.7);
-            --radial-color-5: rgba(0, 0, 0, 0.8);
-            --floating-accent-1: rgba(0, 150, 255, 0.2);
-            --floating-accent-2: rgba(0, 150, 255, 0.15);
-            --floating-accent-3: rgba(0, 150, 255, 0.1);
-        }
-        
-        /* Dark Theme (Default) */
-        body {
-            --bg-primary: #1A1D24;
-            --bg-secondary: #232730;
-            --bg-nav: rgba(26, 29, 36, 0.8);
-            --text-primary: #F0F2F5;
-            --text-secondary: #a8b2d1;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --shadow-color: rgba(25, 121, 177, 0.651);
-            --input-bg: #2c313a;
-        }
+        --radial-color-1: rgba(0, 150, 255, 0.25);
+        --radial-color-2: rgba(0, 150, 255, 0.15);
+        --radial-color-3: rgba(0, 150, 255, 0.1);
+        --radial-color-4: rgba(0, 0, 0, 0.7);
+        --radial-color-5: rgba(0, 0, 0, 0.8);
+        --floating-accent-1: rgba(0, 150, 255, 0.2);
+        --floating-accent-2: rgba(0, 150, 255, 0.15);
+        --floating-accent-3: rgba(0, 150, 255, 0.1);
 
-        /* Light Theme */
-        body.light-theme {
-            --bg-primary: #F8F9FA;
-            --bg-secondary: #FFFFFF;
-            --bg-nav: rgba(248, 249, 250, 0.85);
-            --text-primary: #1A1D24;
-            --text-secondary: #5a6178;
-            --border-color: rgba(0, 0, 0, 0.1);
-            --shadow-color: rgba(0, 0, 0, 0.08);
-            --input-bg: #F0F2F5;
-            
-            /* Animation colors for light mode */
-            --radial-color-1: rgba(0, 150, 255, 0.08);
-            --radial-color-2: rgba(0, 150, 255, 0.05);
-            --radial-color-3: rgba(0, 150, 255, 0.03);
-            --radial-color-4: rgba(0, 0, 0, 0.05);
-            --radial-color-5: rgba(0, 0, 0, 0.07);
-            --floating-accent-1: rgba(0, 150, 255, 0.08);
-            --floating-accent-2: rgba(0, 150, 255, 0.06);
-            --floating-accent-3: rgba(0, 150, 255, 0.04);
-        }
+        --footer-pattern-color: rgba(0, 255, 0, 0.08); 
+        --footer-gradient-overlay: rgba(0, 0, 0, 0.85); 
+    }
+
+    body {
+        --bg-primary: #1A1D24;
+        --bg-secondary: #232730; 
+        --bg-nav: rgba(26, 29, 36, 0.8);
+        --text-primary: #F0F2F5;
+        --text-secondary: #a8b2d1; 
+        --border-color: rgba(255, 255, 255, 0.1);
+        --shadow-color: rgba(25, 121, 177, 0.651);
+    }
+
+    body.light-theme {
+        --bg-primary: #F8F9FA;
+        --bg-secondary: #FFFFFF;
+        --bg-nav: rgba(248, 249, 250, 0.85);
+        --text-primary: #1A1D24;
+        --text-secondary: #5a6178;
+        --border-color: rgba(0, 0, 0, 0.1);
+        --shadow-color: rgba(0, 0, 0, 0.08);
+
+        --radial-color-1: rgba(0, 150, 255, 0.15);
+        --radial-color-2: rgba(0, 150, 255, 0.1);
+        --radial-color-3: rgba(0, 150, 255, 0.07);
+
+        --radial-color-4: rgba(255, 255, 255, 0.7);
+        --radial-color-5: rgba(255, 255, 255, 0.8);
+
+        --floating-accent-1: rgba(0, 150, 255, 0.15);
+        --floating-accent-2: rgba(0, 150, 255, 0.1);
+        --floating-accent-3: rgba(0, 150, 255, 0.07);
+
+
+        --footer-pattern-color: rgba(100, 100, 100, 0.08); 
+        --footer-gradient-overlay: rgba(255, 255, 255, 0.8); 
+    }
 
         * {
             margin: 0;
@@ -165,13 +166,13 @@
                 transform: translate(0, 0) rotate(360deg);
             }
         }
-        
+
         main {
             flex-grow: 1;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'IBM Plex Serif', serif;
             font-weight: 600;
             line-height: 1.3;
             color: var(--text-primary);
@@ -180,12 +181,14 @@
         h1 { font-size: 2.8rem; }
         h2 { font-size: 2.2rem; margin-bottom: 1.5rem; }
         h3 { font-size: 1.6rem; margin-bottom: 1rem; }
+        h4 { font-size: 1.4rem; }
         
         a {
             text-decoration: none;
             color: var(--accent);
             transition: var(--transition-fast);
         }
+
         a:hover { color: var(--accent-dark); }
 
         .container {
@@ -193,12 +196,6 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .container-narrow {
-            max-width: 700px;
         }
 
         .btn {
@@ -214,7 +211,7 @@
             transition: var(--transition-smooth);
             cursor: pointer;
             border: 2px solid transparent;
-            font-family: 'Playfair Display', serif;
+            font-family: 'IBM Plex Serif', serif;
         }
         
         .btn-primary {
@@ -222,6 +219,7 @@
             color: #1A1D24;
             border-color: var(--accent);
         }
+
         .btn-primary:hover {
             background: var(--accent-dark);
             border-color: var(--accent-dark);
@@ -250,7 +248,7 @@
             color: var(--text-secondary); 
         }
 
-        /* Navigation */
+    
         .navbar {
             background: var(--bg-nav);
             backdrop-filter: blur(10px);
@@ -269,7 +267,7 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'IBM Plex Serif', serif;
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--text-primary);
@@ -348,99 +346,301 @@
             color: var(--text-primary);
             cursor: pointer;
         }
-        
-        
-        .contact-wrapper {
-            background: var(--bg-secondary);
-            padding: 2.5rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px var(--shadow-color);
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
             position: relative;
             z-index: 1;
         }
-        
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-form input, .contact-form textarea {
-            padding: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            font-size: 1rem;
-            font-family: 'EB Garamond', sans-serif;
-            background-color: var(--input-bg);
-            color: var(--text-primary);
-            transition: var(--transition-fast);
-        }
-        
-        .contact-form input::placeholder, .contact-form textarea::placeholder {
-            color: var(--text-secondary);
-        }
-        
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: var(--accent);
-            outline: none;
-            box-shadow: 0 0 0 3px var(--shadow-color);
-        }
-        
-        .contact-form textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-        
-        .contact-form .btn {
-            width: 100%;
-        }
-        
-        .contact-info {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        .contact-info h3 {
-            margin-bottom: 1.5rem;
+
+        @media (min-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
         }
 
-        .contact-info-links {
+        .intro-text {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .intro-text {
+                text-align: left;
+            }
+        }
+
+        .intro-visual {
+            position: relative;
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+            align-items: center;
+            height: 300px;
+            perspective: 1000px;
         }
-        
-        .contact-info-links a {
-            display: inline-flex;
+
+        .floating-cube {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            transform-style: preserve-3d;
+            animation: rotateCube 15s infinite linear;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: var(--accent-light);
+            border: 2px solid var(--accent);
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: var(--bg-primary);
-            color: var(--text-secondary);
-            border-radius: 50%;
-            font-size: 1.1rem;
-            transition: var(--transition-smooth);
-        }
-        
-        .contact-info-links a:hover {
-            background: var(--accent);
-            color: #1A1D24;
-            transform: translateY(-3px);
+            font-size: 2.5rem;
+            color: var(--accent);
+            opacity: 0.8;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(25, 121, 177, 0.651);
         }
 
-    
-        .footer {
+        .face-front { transform: translateZ(75px); }
+        .face-back { transform: rotateY(180deg) translateZ(75px); }
+        .face-right { transform: rotateY(90deg) translateZ(75px); }
+        .face-left { transform: rotateY(-90deg) translateZ(75px); }
+        .face-top { transform: rotateX(90deg) translateZ(75px); }
+        .face-bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+        @keyframes rotateCube {
+            0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+        }
+
+        .intro-text h1 {
+            font-size: 3rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .intro-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
             background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1;
+        }
+
+        .project-card.is-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px var(--text-primary);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                800px circle at var(--mouse-x) var(--mouse-y),
+                rgba(25, 121, 177, 0.651),
+                transparent 40%
+            );
+            border-radius: var(--radius-lg);
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+        
+        .project-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 29, 36, 0.7) 0%, rgba(26, 29, 36, 0.3) 100%);
+            z-index: 2;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-image::before {
+            opacity: 0.5;
+        }
+
+        .project-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-card h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            transition: var(--transition-fast);
+        }
+
+        .project-card h3 a {
+            color: inherit;
+        }
+
+        .project-card h3 a:hover {
+            color: var(--accent);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        .project-tags span {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.4rem 0.9rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .project-tags span:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(25, 121, 177, 0.651);
+        }
+
+        .project-links {
+            margin-top: auto;
+            display: flex;
+            gap: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-links .btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .project-links .btn:hover {
+            transform: translateY(-3px);
+            color: var(--text-primary);
+        }
+
+        .project-links .btn-secondary {
+            background: transparent;
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .project-links .btn-secondary:hover {
+            background: var(--accent-light);
+        }
+
+        .footer {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.103), rgba(0, 0, 0, 0.144)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" preserveAspectRatio="none"><path fill="none" stroke="rgba(0, 150, 255, 0.12)" stroke-width="0.8" d="M50,0 L150,0 L200,86.6 L150,173.2 L50,173.2 L0,86.6 Z M50,57.7 L150,57.7 L200,144.3 L150,230.9 L50,230.9 L0,144.3 Z M50,115.4 L150,115.4 L200,202 L150,288.6 L50,288.6 L0,202 Z" transform="translate(0,-57.7)"/><text x="25" y="40" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">div</text><text x="25" y="70" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">{ }</text><text x="25" y="100" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">fn()</text><text x="25" y="130" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">// js</text><text x="125" y="40" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">.css</text><text x="125" y="70" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">html</text><text x="125" y="100" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">const</text><text x="125" y="130" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">react</text></svg>'),
+                var(--bg-secondary);
+            background-size: 300px;
+            background-attachment: fixed;
             color: var(--text-secondary);
             padding: 4rem 0 2rem;
             border-top: 1px solid var(--border-color);
-            margin-top: 6rem; 
             position: relative;
             z-index: 1;
         }
@@ -491,7 +691,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
+            width: 40px; 
             height: 40px;
             border-radius: 50%;
             background: var(--bg-primary);
@@ -512,6 +712,42 @@
             margin-top: 2.5rem;
             border-top: 1px solid var(--border-color);
             font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.4rem; }
+            h2 { font-size: 1.8rem; }
+            
+            .mobile-toggle { display: block; }
+            .theme-toggle { margin-right: 0.5rem; }
+            
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 65px;
+                right: 0;
+                flex-direction: column;
+                background: var(--bg-secondary);
+                width: 100%;
+                height: calc(100vh - 65px);
+                padding: 2rem;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+                gap: 1.5rem;
+            }
+            .nav-menu.active { display: flex; }
+            
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .intro-text {
+                text-align: center;
+            }
+            
+            .intro-text p {
+                margin: 0 auto 1.5rem;
+            }
         }
         
         .cursor {
@@ -536,47 +772,6 @@
             height: 30px;
             background: #fff;
         }
-
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.4rem; }
-            h2 { font-size: 1.8rem; }
-            
-            .mobile-toggle { display: block; }
-            .theme-toggle { margin-right: 0.5rem; }
-            
-            .nav-menu {
-                display: none;
-                position: fixed;
-                top: 65px; /* Navbar height */
-                right: 0;
-                flex-direction: column;
-                background: var(--bg-secondary);
-                width: 100%;
-                height: calc(100vh - 65px);
-                padding: 2rem;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-                gap: 1.5rem;
-            }
-            .nav-menu.active { display: flex; }
-        }
-        
-        @media (max-width: 576px) {
-            .contact-wrapper {
-                padding: 1.5rem;
-            }
-        }
-        
-        /* Animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: none;
-        }
-        .slide-up { transform: translateY(30px); }
     </style>
 </head>
 <body>
@@ -594,8 +789,8 @@
             <div class="nav-controls">
                  <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="portfolio.html" class="nav-link"><i class="fas fa-laptop-code"></i> Projects</a></li>
-                    <li><a href="contact.html" class="nav-link active"><i class="fas fa-paper-plane"></i> Contact</a></li>
+                    <li><a href="portfolio.html" class="nav-link active"><i class="fas fa-laptop-code"></i> Projects</a></li>
+                    <li><a href="contact.html" class="nav-link"><i class="fas fa-paper-plane"></i> Contact</a></li>
                 </ul>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <i class="fas fa-moon"></i>
@@ -607,32 +802,132 @@
         </div>
     </nav>
 
-    <main>
-        <section class="section">
-            <div class="container container-narrow">
-                 <header class="section-header animate-on-scroll" data-animation="slide-up">
-                    <h1>Get In Touch</h1>
-                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Let's build something amazing together.</p>
-                </header>
-                
-                <div class="contact-wrapper animate-on-scroll" data-animation="slide-up">
-                    <form class="contact-form" action="https://formspree.io/f/xovdoazr" method="POST">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
-                    </form>
+       <main>
+               <section class="section">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h1>My Work</h1>
+                        <h2>DESIGN DEVELOP & DOMINATE</h2>
+                        <p>
+                            My approach to web projects is rooted in a clear methodology: first, I meticulously design engaging and intuitive web experiences, ensuring every detail serves its purpose. Then, I skillfully develop these concepts into robust, high-performing websites. My ultimate aim is to empower my clients to truly dominate their online presence, making sure their digital footprint translates into tangible results and stronger connections.
+                        </p>
+                    </div>
                     
-                    <div class="contact-info">
-                        <h3>Or reach out directly</h3>
-                        <div class="contact-info-links">
-                            <a href="tel:+254705976736" class="contact-icon" title="Phone"><i class="fas fa-phone"></i></a>
-                            <a href="mailto:mutindasmusyimi@gmail.com" class="contact-icon" title="Email"><i class="fas fa-envelope"></i></a>
-                            <a href="https://www.linkedin.com/in/musyimi-sebastian-0b7376283" target="_blank" class="contact-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/gr8sebastian" target="_blank" class="contact-icon" title="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://wa.me/254705976736" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <div class="intro-visual">
+                        <div class="floating-cube">
+                            <div class="cube-face face-front"><i class="fas fa-code"></i></div>
+                            <div class="cube-face face-back"><i class="fas fa-paint-brush"></i></div>
+                            <div class="cube-face face-right"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="cube-face face-left"><i class="fas fa-server"></i></div>
+                            <div class="cube-face face-top"><i class="fas fa-database"></i></div>
+                            <div class="cube-face face-bottom"><i class="fas fa-rocket"></i></div>
                         </div>
                     </div>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/matrixlab.JPG" alt="Matrix Lab Ke project">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://gr8sebastian.github.io/Matrixlabke" target="_blank">The Matrix Lab Ke</a></h3>
+                            <p class="project-description">A sophisticated web project with advanced front-end and back-end integration, user authentication, and interactive data visualization.</p>
+                            <div class="project-tags">
+                                <span>Web App</span>
+                                <span>JavaScript</span>
+                                <span>UI/UX</span>
+                                <span>Tech Startup</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://gr8sebastian.github.io/Matrixlabke" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github"></i> Live View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/oceanwave.JPG" alt="Oceanwave Resort project">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://gr8sebastian.github.io/oceanwave" target="_blank">Oceanwave Resort</a></h3>
+                            <p class="project-description">A unique web solution for the hospitality industry with seamless booking experiences and great views of the resort.</p>
+                            <div class="project-tags">
+                                <span>Hospitality</span>
+                                <span>Booking System</span>
+                                <span>Responsive</span>
+                                <span>Front End</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://gr8sebastian.github.io/oceanwave" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github"></i> Live View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/gadgetplug.JPG" alt="Gadgetplug Ke project">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://gr8sebastian.github.io/gadgetplugke" target="_blank">Gadgetplug Ke</a></h3>
+                            <p class="project-description">An e-commerce prototype for all tech gadgets and security solutions with product listings and shopping cart functionality and checkout.</p>
+                            <div class="project-tags">
+                                <span>eCommerce</span>
+                                <span>Tech</span>
+                                <span>Prototype</span>
+                                <span>Functionality</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://gr8sebastian.github.io/gadgetplugke" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github"></i> Live View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/aurawellness.JPG" alt="Aura Wellness Tracker App">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://gr8sebastian.github.io/aurawellness" target="_blank">Aura Wellness Tracker App</a></h3>
+                            <p class="project-description">A mood and mindfulness journal that helps users track daily emotions, gratitude, activities, and reflections. Features mood trend visualization and historical logging.</p>
+                            <div class="project-tags">
+                                <span>Mobile App</span>
+                                <span>Tailwind CSS</span>
+                                <span>React js</span>
+                                <span>Chart js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://gr8sebastian.github.io/aurawellness" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github"></i> Live View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/stunesautoparts.JPG" alt="Stunes Autoparts">
+                    </div>
+                    <div class="project-content">
+                        <h3><a href="https://gr8sebastian.github.io/stunesautoparts/" target="_blank">Stunes Autoparts</a></h3>
+                        <p class="project-description">Stunes Autoparts provides a seamless shopping experience for car enthusiasts with over 15,000 genuine parts, a smart fitment guide for compatibility, fast shipping, and expert support.</p>
+                        <div class="project-tags">
+                            <span>Responsive</span>
+                            <span>Modern UI</span>
+                            <span>Comprehensive</span>
+                            <span>GSAP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://gr8sebastian.github.io/stunesautoparts" target="_blank" class="btn btn-primary">
+                                <i class="fab fa-github"></i> Development in Progress
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                                    
                 </div>
             </div>
         </section>
@@ -643,6 +938,12 @@
             <div class="footer-col">
                 <h4>Sebastian Musyimi</h4>
                 <p>Web developer creating meaningful digital experiences that connect people and solve real-world problems.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/musyimi-sebastian-0b7376283" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/gR8Sebastian" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://dribbble.com/greattsebastian" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    <a href="https://wa.me/254705976736" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
             
             <div class="footer-col">
@@ -676,7 +977,9 @@
             const themeToggle = document.getElementById('themeToggle');
             const body = document.body;
             const themeIcon = themeToggle.querySelector('i');
+            const projectsGrid = document.getElementById('projectsGrid');
 
+            // --- Mobile Nav ---
             mobileToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 const isOpen = navMenu.classList.contains('active');
@@ -693,7 +996,7 @@
                     }
                 });
             });
-            
+
             const applyTheme = (theme) => {
                 if (theme === 'light') {
                     body.classList.add('light-theme');
@@ -712,11 +1015,12 @@
                 localStorage.setItem('theme', newTheme);
                 applyTheme(newTheme);
             });
-
             const savedTheme = localStorage.getItem('theme') || 'dark'; 
             applyTheme(savedTheme);
 
-            const scrollElements = document.querySelectorAll('.animate-on-scroll');
+            
+
+            const projectCards = document.querySelectorAll('.project-card');
             
             const elementInView = (el, dividend = 1) => {
                 const elementTop = el.getBoundingClientRect().top;
@@ -727,22 +1031,35 @@
 
             const displayScrollElement = (element) => {
                 element.classList.add('is-visible');
-                const animationType = element.getAttribute('data-animation');
-                if (animationType === 'slide-up') {
-                   element.style.transform = 'translateY(0)';
-                }
             };
 
             const handleScrollAnimation = () => {
-                scrollElements.forEach((el) => {
-                    if (elementInView(el, 1.25)) {
-                        displayScrollElement(el);
+                projectCards.forEach((card, index) => {
+                    if (elementInView(card, 1.25)) {
+                        setTimeout(() => {
+                            displayScrollElement(card);
+                        }, index * 150);
                     }
                 });
             }
             
             handleScrollAnimation();
             window.addEventListener('scroll', handleScrollAnimation);
+
+            const handleLightingEffect = (e) => {
+                const projectCards = document.querySelectorAll('.project-card');
+                
+                projectCards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            };
+            
+            projectsGrid.addEventListener('mousemove', handleLightingEffect);
             
             // Cursor
             const cursor = document.querySelector('.cursor');
