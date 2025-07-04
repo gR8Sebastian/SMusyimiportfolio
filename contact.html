@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +27,16 @@
             
             --transition-fast: all 0.2s ease-in-out;
             --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            
+            /* Animation colors for dark mode */
+            --radial-color-1: rgba(0, 150, 255, 0.25);
+            --radial-color-2: rgba(0, 150, 255, 0.15);
+            --radial-color-3: rgba(0, 150, 255, 0.1);
+            --radial-color-4: rgba(0, 0, 0, 0.7);
+            --radial-color-5: rgba(0, 0, 0, 0.8);
+            --floating-accent-1: rgba(0, 150, 255, 0.2);
+            --floating-accent-2: rgba(0, 150, 255, 0.15);
+            --floating-accent-3: rgba(0, 150, 255, 0.1);
         }
         
         /* Dark Theme (Default) */
@@ -52,6 +61,16 @@
             --border-color: rgba(0, 0, 0, 0.1);
             --shadow-color: rgba(0, 0, 0, 0.08);
             --input-bg: #F0F2F5;
+            
+            /* Animation colors for light mode */
+            --radial-color-1: rgba(0, 150, 255, 0.08);
+            --radial-color-2: rgba(0, 150, 255, 0.05);
+            --radial-color-3: rgba(0, 150, 255, 0.03);
+            --radial-color-4: rgba(0, 0, 0, 0.05);
+            --radial-color-5: rgba(0, 0, 0, 0.07);
+            --floating-accent-1: rgba(0, 150, 255, 0.08);
+            --floating-accent-2: rgba(0, 150, 255, 0.06);
+            --floating-accent-3: rgba(0, 150, 255, 0.04);
         }
 
         * {
@@ -70,6 +89,81 @@
             flex-direction: column;
             overflow-x: hidden;
             transition: background 0.3s, color 0.3s;
+            position: relative;
+        }
+        
+        /* Background Animation - Entire Page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 15% 20%, var(--radial-color-1) 0, transparent 35%),
+                radial-gradient(circle at 85% 80%, var(--radial-color-2) 0, transparent 45%),
+                radial-gradient(circle at 70% 30%, var(--radial-color-3) 0, transparent 55%),
+                radial-gradient(circle at 30% 70%, var(--radial-color-4) 0, transparent 60%),
+                radial-gradient(circle at 50% 50%, var(--radial-color-5) 0, transparent 70%);
+            z-index: -2;
+        }
+        
+        /* Animated floating accents */
+        .floating-accent {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.7;
+            animation: float 15s infinite linear;
+        }
+        
+        .accent-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--floating-accent-1);
+            top: 10%;
+            left: 5%;
+            animation-duration: 25s;
+        }
+        
+        .accent-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--floating-accent-2);
+            bottom: 15%;
+            right: 10%;
+            animation-duration: 20s;
+            animation-delay: 2s;
+        }
+        
+        .accent-3 {
+            width: 250px;
+            height: 250px;
+            background: var(--floating-accent-3);
+            top: 40%;
+            left: 70%;
+            animation-duration: 18s;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, 30px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, 60px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-20px, 30px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
         }
         
         main {
@@ -77,7 +171,7 @@
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'IBM Plex Serif', serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
             line-height: 1.3;
             color: var(--text-primary);
@@ -99,6 +193,8 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
         }
         
         .container-narrow {
@@ -118,7 +214,7 @@
             transition: var(--transition-smooth);
             cursor: pointer;
             border: 2px solid transparent;
-            font-family: 'IBM Plex Serif', serif;
+            font-family: 'Playfair Display', serif;
         }
         
         .btn-primary {
@@ -133,10 +229,26 @@
             box-shadow: 0 10px 20px -10px var(--accent);
         }
 
-        .section { padding: 6rem 0; }
-        .section-header { text-align: center; margin-bottom: 3.5rem; }
+        .section { 
+            padding: 6rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-header { 
+            text-align: center; 
+            margin-bottom: 3.5rem; 
+            position: relative;
+            z-index: 1;
+        }
+        
         .section-header h1 { margin-bottom: 0.5rem; }
-        .section-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; color: var(--text-secondary); }
+        .section-header p { 
+            font-size: 1.1rem; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            color: var(--text-secondary); 
+        }
 
         /* Navigation */
         .navbar {
@@ -157,7 +269,7 @@
         }
 
         .logo {
-            font-family: 'IBM Plex Serif', serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--text-primary);
@@ -244,6 +356,8 @@
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 12px var(--shadow-color);
+            position: relative;
+            z-index: 1;
         }
         
         .contact-form {
@@ -320,7 +434,6 @@
             transform: translateY(-3px);
         }
 
-
     
         .footer {
             background: var(--bg-secondary);
@@ -328,6 +441,8 @@
             padding: 4rem 0 2rem;
             border-top: 1px solid var(--border-color);
             margin-top: 6rem; 
+            position: relative;
+            z-index: 1;
         }
 
         .footer-container {
@@ -398,7 +513,8 @@
             border-top: 1px solid var(--border-color);
             font-size: 0.9rem;
         }
-       .cursor {
+        
+        .cursor {
             position: absolute;
             width: 20px;
             height: 20px;
@@ -408,18 +524,20 @@
             z-index: 9999;
             transition: width 0.2s, height 0.2s, background 0.2s;
         }
+        
         .cursor-link {
             width: 40px;
             height: 40px;
             background: rgba(255, 255, 255, 0.288);
         }
+        
         .cursor-button {
             width: 30px;
             height: 30px;
             background: #fff;
         }
 
-        /* Responsiveness designnnnnn */
+        /* Responsiveness */
         @media (max-width: 768px) {
             h1 { font-size: 2.4rem; }
             h2 { font-size: 1.8rem; }
@@ -462,6 +580,11 @@
     </style>
 </head>
 <body>
+    <!-- Floating accent patches - Cover entire website -->
+    <div class="floating-accent accent-1"></div>
+    <div class="floating-accent accent-2"></div>
+    <div class="floating-accent accent-3"></div>
+    
     <nav class="navbar">
         <div class="container navbar-container">
             <a href="index.html" class="logo">
@@ -535,7 +658,7 @@
                 <h4>Contact Info</h4>
                 <ul class="footer-links">
                     <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
-                    <li><i class="fas fa-envelope"></i> mutindasmusyimi@gmail.com.com</li>
+                    <li><i class="fas fa-envelope"></i> mutindasmusyimi@gmail.com</li>
                     <li><i class="fas fa-phone"></i> +254 705 976 736</li>
                 </ul>
             </div>
@@ -570,6 +693,7 @@
                     }
                 });
             });
+            
             const applyTheme = (theme) => {
                 if (theme === 'light') {
                     body.classList.add('light-theme');
@@ -617,23 +741,20 @@
                 });
             }
             
-            
-
             handleScrollAnimation();
             window.addEventListener('scroll', handleScrollAnimation);
+            
+            // Cursor
+            const cursor = document.querySelector('.cursor');
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = `${e.pageX - 10}px`;
+                cursor.style.top = `${e.pageY - 10}px`;
+            });
+            document.querySelectorAll('a, .btn').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add(el.tagName === 'A' ? 'cursor-link' : 'cursor-button'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-link', 'cursor-button'));
+            });
         });
-        if ('ontouchstart' in window) cursor.style.display = 'none';
-        
-                const cursor = document.querySelector('.cursor');
-                document.addEventListener('mousemove', (e) => {
-                    cursor.style.left = `${e.pageX - 10}px`;
-                    cursor.style.top = `${e.pageY - 10}px`;
-                });
-                document.querySelectorAll('a, .btn').forEach(el => {
-                    el.addEventListener('mouseenter', () => cursor.classList.add(el.tagName === 'A' ? 'cursor-link' : 'cursor-button'));
-                    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-link', 'cursor-button'));
-                });
     </script>
 </body>
 </html>
-
