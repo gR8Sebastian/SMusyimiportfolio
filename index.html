@@ -15,54 +15,63 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --accent: #0096FF;       /* blue */
-            --accent-dark: #0096FF;
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-full: 50px;
-            --transition-fast: all 0.2s ease-in-out;
-            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            
-            /* Animation colors for dark mode */
-            --radial-color-1: rgba(0, 150, 255, 0.25);
-            --radial-color-2: rgba(0, 150, 255, 0.15);
-            --radial-color-3: rgba(0, 150, 255, 0.1);
-            --radial-color-4: rgba(0, 0, 0, 0.7);
-            --radial-color-5: rgba(0, 0, 0, 0.8);
-            --floating-accent-1: rgba(0, 150, 255, 0.2);
-            --floating-accent-2: rgba(0, 150, 255, 0.15);
-            --floating-accent-3: rgba(0, 150, 255, 0.1);
-        }
-        body {
-            --bg-primary: #1A1D24;
-            --bg-secondary: #232730;
-            --bg-nav: rgba(26, 29, 36, 0.8);
-            --text-primary: #F0F2F5;
-            --text-secondary: #a8b2d1;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --shadow-color: rgba(25, 121, 177, 0.651);
-        }
-        body.light-theme {
-            --bg-primary: #F8F9FA;
-            --bg-secondary: #FFFFFF;
-            --bg-nav: rgba(248, 249, 250, 0.85);
-            --text-primary: #1A1D24;
-            --text-secondary: #5a6178;
-            --border-color: rgba(0, 0, 0, 0.1);
-            --shadow-color: rgba(0, 0, 0, 0.08);
-            
-            /* Animation colors for light mode */
-            --radial-color-1: rgba(0, 150, 255, 0.08);
-            --radial-color-2: rgba(0, 150, 255, 0.05);
-            --radial-color-3: rgba(0, 150, 255, 0.03);
-            --radial-color-4: rgba(0, 0, 0, 0.05);
-            --radial-color-5: rgba(0, 0, 0, 0.07);
-            --floating-accent-1: rgba(0, 150, 255, 0.08);
-            --floating-accent-2: rgba(0, 150, 255, 0.06);
-            --floating-accent-3: rgba(0, 150, 255, 0.04);
-        }
+            :root {
+        --accent: #0096FF;       /* blue */
+        --accent-dark: #0096FF;
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --radius-full: 50px;
+        --transition-fast: all 0.2s ease-in-out;
+        --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        --radial-color-1: rgba(0, 150, 255, 0.25);
+        --radial-color-2: rgba(0, 150, 255, 0.15);
+        --radial-color-3: rgba(0, 150, 255, 0.1);
+        --radial-color-4: rgba(0, 0, 0, 0.7);
+        --radial-color-5: rgba(0, 0, 0, 0.8);
+        --floating-accent-1: rgba(0, 150, 255, 0.2);
+        --floating-accent-2: rgba(0, 150, 255, 0.15);
+        --floating-accent-3: rgba(0, 150, 255, 0.1);
+
+        --footer-pattern-color: rgba(0, 255, 0, 0.08); 
+        --footer-gradient-overlay: rgba(0, 0, 0, 0.85); 
+    }
+
+    body {
+        --bg-primary: #1A1D24;
+        --bg-secondary: #232730; 
+        --bg-nav: rgba(26, 29, 36, 0.8);
+        --text-primary: #F0F2F5;
+        --text-secondary: #a8b2d1; 
+        --border-color: rgba(255, 255, 255, 0.1);
+        --shadow-color: rgba(25, 121, 177, 0.651);
+    }
+
+    body.light-theme {
+        --bg-primary: #F8F9FA;
+        --bg-secondary: #FFFFFF;
+        --bg-nav: rgba(248, 249, 250, 0.85);
+        --text-primary: #1A1D24;
+        --text-secondary: #5a6178;
+        --border-color: rgba(0, 0, 0, 0.1);
+        --shadow-color: rgba(0, 0, 0, 0.08);
+
+        --radial-color-1: rgba(0, 150, 255, 0.15);
+        --radial-color-2: rgba(0, 150, 255, 0.1);
+        --radial-color-3: rgba(0, 150, 255, 0.07);
+
+        --radial-color-4: rgba(255, 255, 255, 0.7);
+        --radial-color-5: rgba(255, 255, 255, 0.8);
+
+        --floating-accent-1: rgba(0, 150, 255, 0.15);
+        --floating-accent-2: rgba(0, 150, 255, 0.1);
+        --floating-accent-3: rgba(0, 150, 255, 0.07);
+
+        
+        --footer-pattern-color: rgba(100, 100, 100, 0.08); 
+        --footer-gradient-overlay: rgba(255, 255, 255, 0.8); 
+    }
         * { 
             margin: 0; 
             padding: 0; 
@@ -81,7 +90,7 @@
             position: relative;
         }
         
-        /* Background Animation - Covers entire site */
+        /* Background Anima entire site */
         body::before {
             content: '';
             position: fixed;
@@ -302,7 +311,6 @@
             cursor: pointer;
         }
         .hero {
-            background: var(--bg-primary);
             color: var(--text-primary);
             padding: 6rem 0;
             position: relative;
@@ -402,7 +410,6 @@
         }
 
         .card-text { line-height: 1.8; color: var(--text-secondary); }
-        .skills { background: var(--bg-secondary); }
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -462,7 +469,12 @@
             margin: 0;
         }
         .footer {
-            background: var(--bg-secondary);
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.103), rgba(0, 0, 0, 0.144)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" preserveAspectRatio="none"><path fill="none" stroke="rgba(0, 150, 255, 0.12)" stroke-width="0.8" d="M50,0 L150,0 L200,86.6 L150,173.2 L50,173.2 L0,86.6 Z M50,57.7 L150,57.7 L200,144.3 L150,230.9 L50,230.9 L0,144.3 Z M50,115.4 L150,115.4 L200,202 L150,288.6 L50,288.6 L0,202 Z" transform="translate(0,-57.7)"/><text x="25" y="40" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">div</text><text x="25" y="70" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">{ }</text><text x="25" y="100" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">fn()</text><text x="25" y="130" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">// js</text><text x="125" y="40" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">.css</text><text x="125" y="70" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">html</text><text x="125" y="100" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">const</text><text x="125" y="130" font-family="monospace" font-size="12" fill="rgba(0, 150, 255, 0.25)">react</text></svg>'),
+                var(--bg-secondary);
+            background-size: 300px;
+            background-attachment: fixed;
             color: var(--text-secondary);
             padding: 4rem 0 2rem;
             border-top: 1px solid var(--border-color);
@@ -604,7 +616,7 @@
             }
         }
 
-        /* For smaller screens, adjust position/size */
+        /*  small screens, adjust size */
         @media (max-width: 768px) {
             .whatsapp-float {
                 width: 50px;
@@ -666,7 +678,7 @@
     </style>
 </head>
 <body>
-    <!-- Floating accent patches - Cover entire website -->
+
     <div class="floating-accent accent-1"></div>
     <div class="floating-accent accent-2"></div>
     <div class="floating-accent accent-3"></div>
