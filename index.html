@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -304,10 +305,9 @@
             align-items: center;
             justify-content: center;
             font-size: 1.6rem;
-            background: var(--accent);
-            color: #1A1D24;
+            color: var(--accent);
         }
-        .card-title { font-size: 1.6rem; margin-bottom: 0; }
+
         .card-text { line-height: 1.8; color: var(--text-secondary); }
         .skills { background: var(--bg-secondary); }
         .skills-grid {
@@ -344,6 +344,25 @@
             font-weight: 500;
             color: var(--text-primary);
             transition: var(--transition-fast);
+        }
+        .skills-intro {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            padding: 25px;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color); 
+            border-radius: 10px; 
+            background-color: var(--bg-secondary); 
+            box-shadow: 0 4px 8px var(--shadow-color); 
+        }
+        .skills-intro:hover{
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px var(--text-primary);
+        }
+        .skills-intro p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 0;
         }
         .footer {
             background: var(--bg-secondary);
@@ -410,6 +429,91 @@
             margin-top: 2.5rem;
             border-top: 1px solid var(--border-color);
             font-size: 0.9rem;
+        }
+        .cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.2s, height 0.2s, background 0.2s;
+        }
+        .cursor-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.288);
+        }
+        .cursor-button {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+        }
+        .whatsapp-float {
+            position: fixed; 
+            width: 60px; 
+            height: 60px; 
+            bottom: 65px; 
+            right: 20px; 
+            background-color: var(--accent); 
+            color: #FFF; 
+            border-radius: 50px; 
+            text-align: center;
+            font-size: 30px; 
+            box-shadow: 2px 2px 3px #999; 
+            z-index: 1000; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            transition: all 0.3s ease; 
+        }
+
+        .whatsapp-float a {
+            color: inherit; 
+            text-decoration: none; 
+            display: block;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E; 
+            box-shadow: 4px 4px 6px #666; 
+            transform: scale(1.05); 
+        }
+
+        .whatsapp-float.pop-in {
+            animation: popIn 0.5s forwards;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            80% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* For smaller screens, adjust position/size */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                bottom: 20px;
+                right: 20px;
+            }
         }
         @media (max-width: 992px) {
             .hero-container {
@@ -486,7 +590,7 @@
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-image animate-on-scroll" data-animation="slide-up">
-                <img src="img/profile.JPG" alt="Sebastian Musyimi Profile Picture" class="profile-photo-img" loading="lazy">
+                <img src="profilepic.JPG" alt="Sebastian Musyimi Profile Picture" class="profile-photo-img" loading="lazy">
             </div>
             <div class="hero-content animate-on-scroll" data-animation="slide-up">
                 <h1 class="hero-title">Hello, I'm <strong>Sebastian Musyimi</strong></h1>
@@ -505,8 +609,7 @@
             <div class="about-grid">
                 <div class="about-card animate-on-scroll" data-animation="slide-up">
                     <div class="card-header">
-                        <div class="card-icon"><i class="fas fa-bullseye"></i></div>
-                        <h3 class="card-title">My Mission</h3>
+                        <div class="card-icon"><i class="fa-solid fa-file-code"></i></div>
                     </div>
                     <p class="card-text">
                         My mission as a web designer and developer is clear: to take your vision and craft it into
@@ -519,8 +622,7 @@
                 </div>
                 <div class="about-card animate-on-scroll" data-animation="slide-up">
                     <div class="card-header">
-                        <div class="card-icon"><i class="fas fa-heart"></i></div>
-                        <h3 class="card-title">My Interests</h3>
+                        <div class="card-icon"><i class="fa-solid fa-circle-user"></i></div>
                     </div>
                     <p class="card-text">
                         When I'm not bringing digital visions to life, you'll often find me
@@ -538,6 +640,17 @@
     <section id="skills" class="section skills">
         <div class="container">
             <h2 class="section-title">My Technical Skills</h2>
+            <div class="skills-intro">
+                <p>Beyond just writing code, what really gets me hyped as a developer is the chance 
+                    to build cool stuff and fix real problems for people. I've put in the work to 
+                    learn the tools and languages that bring digital ideas to life, whether it's 
+                    making websites that are super easy to use or setting up strong systems behind 
+                    the scenes that just work. I'm always down to learn new things, 'cause tech changes 
+                    so fast, and I wanna make sure I'm always using the best tools for whatever I'm building.
+                    And honestly, I know that building great stuff isn't a one-person show. I love working 
+                    with others, bouncing ideas around, and turning big challenges into awesome solutions.
+                </p>
+            </div>
             <div class="skills-grid">
                 <div class="skill-card animate-on-scroll" data-animation="slide-up"><i class="fab fa-html5 skill-icon"></i><span class="skill-name">HTML5</span></div>
                 <div class="skill-card animate-on-scroll" data-animation="slide-up"><i class="fab fa-css3-alt skill-icon"></i><span class="skill-name">CSS3</span></div>
@@ -546,9 +659,16 @@
                 <div class="skill-card animate-on-scroll" data-animation="slide-up"><i class="fas fa-database skill-icon"></i><span class="skill-name">SQL</span></div>
                 <div class="skill-card animate-on-scroll" data-animation="slide-up"><i class="fab fa-git-alt skill-icon"></i><span class="skill-name">Git</span></div>
                 <div class="skill-card animate-on-scroll" data-animation="slide-up"><i class="fas fa-mobile-alt skill-icon"></i><span class="skill-name">Responsive</span></div>
+                <div class="skill-card animate-on-scroll" data-animation="slide-up"><i class="fab fa-figma skill-icon"></i> <span class="skill-name">Figma</span></div>
+                <div class="skill-card animate-on-scroll" data-animation="slide-up"><i class="fas fa-palette skill-icon"></i> <span class="skill-name">Canva</span></div>
             </div>
         </div>
     </section>
+    <div class="whatsapp-float">
+        <a href="https://wa.me/254705976736?text=Hello%20I%20saw%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+         </a>
+    </div>
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-col">
@@ -582,6 +702,8 @@
             <p>&copy; 2025 Sebastian Musyimi.</p>
         </div>
     </footer>
+
+    <div class="cursor"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -655,20 +777,39 @@
                 });
             }
 
-            // Throttle scroll events for better performance
             let scrollTimeout;
             window.addEventListener('scroll', () => {
                 if (!scrollTimeout) {
                     scrollTimeout = setTimeout(() => {
                         handleScrollAnimation();
                         scrollTimeout = null;
-                    }, 100); // Adjust throttle time as needed
+                    }, 100); 
                 }
             });
 
-            // Initial check for elements in view on load
+            
             handleScrollAnimation();
         });
+        if ('ontouchstart' in window) cursor.style.display = 'none';
+        // Cursor
+            const cursor = document.querySelector('.cursor');
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = `${e.pageX - 10}px`;
+                cursor.style.top = `${e.pageY - 10}px`;
+            });
+            document.querySelectorAll('a, .btn').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add(el.tagName === 'A' ? 'cursor-link' : 'cursor-button'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-link', 'cursor-button'));
+            });
+               document.addEventListener('DOMContentLoaded', function() {
+        const whatsappButton = document.querySelector('.whatsapp-float');
+        if (whatsappButton) {
+    
+            setTimeout(() => {
+                whatsappButton.classList.add('pop-in');
+            }, 500); 
+        }
+    });
     </script>
 </body>
 </html>
